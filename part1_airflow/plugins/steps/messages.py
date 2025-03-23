@@ -1,12 +1,7 @@
-import os
-from dotenv import load_dotenv
 from airflow.providers.telegram.hooks.telegram import TelegramHook
 
-# Загружаем переменные окружения из .env
-load_dotenv()
-
-TOKEN = os.getenv('API_TOKEN_ID')
-TELEGRAM_CHAT_ID = os.getenv('CHAT_ID')
+TOKEN = '7385279573:AAFqfjKQ_g1Y79Ychje-8oKYuOkwGK9wKlw'
+TELEGRAM_CHAT_ID = '-1002257571456'
 
 def send_telegram_success_message(context):
     hook = TelegramHook(token=TOKEN, chat_id=TELEGRAM_CHAT_ID)

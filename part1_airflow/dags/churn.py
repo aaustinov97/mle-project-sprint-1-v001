@@ -4,6 +4,7 @@ from airflow.operators.python import PythonOperator # импортируем к�
 from steps.churn import extract, transform, load, create_table # type: ignore
 from steps.messages import send_telegram_success_message, send_telegram_failure_message # type: ignore
 
+
 with DAG(
     dag_id='flats_churn',
     schedule='@once',
