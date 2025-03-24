@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np
+import logging
 from airflow.providers.postgres.hooks.postgres import PostgresHook
+
+LOG_FORMAT  = f'WB_DATA DAG - '
 
 def create_table():
     from sqlalchemy import MetaData, Table, Column, String, Integer, Float, String, DateTime, UniqueConstraint, inspect
@@ -34,12 +37,15 @@ def create_table():
     engine = postgres_hook.get_sqlalchemy_engine()
 
     if not inspect(engine).has_table(flats_churn_table.name): 
+        logging.info(LOG_FORMAT + 'Table created')
         metadata.create_all(engine)
 
 def extract(**kwargs):
+    logging.info(LOG_FORMAT + 'Start the extract part')
     ti = kwargs['ti']
     hook = PostgresHook('destination_db')
     conn = hook.get_conn()
+    logging.info(LOG_FORMAT + 'Connected to db')
     sql = f"""
     select f.id as flat_id, f.price, f.floor, f.kitchen_area, f.living_area, f.rooms, f.is_apartment, f.studio, f.total_area,
                             b.build_year, b.building_type_int, b.latitude, b.longitude, b.ceiling_height, b.flats_count,
