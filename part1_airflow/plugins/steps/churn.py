@@ -14,7 +14,8 @@ def create_table():
         metadata,
     Column('id', Integer, primary_key=True, autoincrement=True),
     Column('flat_id', Integer),
-    Column('price', Float),
+    Column('price', Integer),
+    Column('target', Float),
     Column('floor', Integer),
     Column('kitchen_area', Float),
     Column('living_area', Float),
@@ -23,6 +24,7 @@ def create_table():
     Column('studio', String),
     Column('total_area', Float),
     Column('build_year', Integer),
+    Column('build_age', Integer),
     Column('building_type_int', Integer),
     Column('latitude', Float),
     Column('longitude', Float),
@@ -62,6 +64,13 @@ def transform(**kwargs):
     ti = kwargs['ti']
     data = ti.xcom_pull(task_ids='extract', key='extracted_data')
     
+    # Преобразование колонок
+    data['target'] = data['price'].astype(float)
+
+    # Преобразуем год постройки на возраст здания
+    from datetime import datetime
+    data['build_age'] = datetime.now().year - data['build_year']
+
     # Удаление дубликатов
     feature_cols = data.columns.drop('flat_id').tolist()
     is_duplicated_features = data.duplicated(subset=feature_cols, keep=False)
