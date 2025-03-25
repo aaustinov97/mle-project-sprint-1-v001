@@ -2,6 +2,8 @@ import pandas as pd
 import yaml
 import os
 import joblib
+import mlflow
+import mlflow.sklearn
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder, StandardScaler, MinMaxScaler
@@ -11,6 +13,8 @@ from catboost import CatBoostRegressor
 def fit_model():
     with open('params.yaml', 'r') as fd:
         params = yaml.safe_load(fd)
+
+    mlflow.start_run()
 
     data = pd.read_csv('part2_dvc/data/initial_data.csv')
 
@@ -52,6 +56,12 @@ def fit_model():
     pipeline.fit(data, data[params['target_col']])
     os.makedirs('part2_dvc/models', exist_ok=True)
     joblib.dump(pipeline, "part2_dvc/models/fitted_model.pkl")
+
+    
+    mlflow.log_params(params)
+    mlflow.sklearn.log_model(model, "model")
+    
+    mlflow.end_run()
 
 if __name__ == '__main__':
     fit_model()

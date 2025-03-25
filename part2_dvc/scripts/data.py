@@ -3,7 +3,7 @@ import yaml
 import os
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
-
+import mlflow
 
 def create_connection():
 
@@ -19,6 +19,7 @@ def create_connection():
     return conn
 
 def get_data():
+    mlflow.start_run()
     with open('params.yaml', 'r') as fd:
         params = yaml.safe_load(fd)
 
@@ -29,6 +30,7 @@ def get_data():
     os.makedirs('part2_dvc/data', exist_ok=True)
     data.to_csv('part2_dvc/data/initial_data.csv', index=None)
 
+    mlflow.end_run()
 
 if __name__ == '__main__':
     get_data()
