@@ -1,0 +1,83 @@
+schema: '2.0'
+stages:
+  get_data:
+    cmd: python part2_dvc/scripts/data.py
+    deps:
+    - path: part2_dvc/scripts/data.py
+      hash: md5
+      md5: 7b8e635912bfb4ba9a8c3e405ad4618b
+      size: 1011
+    params:
+      params.yaml:
+        index_col: flat_id
+    outs:
+    - path: part2_dvc/data/initial_data.csv
+      hash: md5
+      md5: 3fe3e2396efcba8a722fcb6777985fb5
+      size: 10740705
+      cloud:
+        my_storage_proj1:
+          etag: 3fe3e2396efcba8a722fcb6777985fb5
+          version_id: 0006312B1784D4B9
+  fit_model:
+    cmd: python part2_dvc/scripts/fit.py
+    deps:
+    - path: part2_dvc/data/initial_data.csv
+      hash: md5
+      md5: 3fe3e2396efcba8a722fcb6777985fb5
+      size: 10740705
+    - path: part2_dvc/scripts/fit.py
+      hash: md5
+      md5: 797489f336d2e0cbc548a6eb63cd4376
+      size: 1982
+    params:
+      params.yaml:
+        depth: 8
+        index_col: flat_id
+        iterations: 1000
+        l2_leaf_reg: 3
+        learning_rate: 0.05
+        one_hot_drop: if_binary
+        random_seed: 42
+        target_col: target
+        verbose: 100
+    outs:
+    - path: part2_dvc/models/fitted_model.pkl
+      hash: md5
+      md5: 2104be374727d88fd7a51b3e7bec3b27
+      size: 4212461
+      cloud:
+        my_storage_proj1:
+          etag: 2104be374727d88fd7a51b3e7bec3b27
+          version_id: 0006312B177FB9E5
+  evaluate_model:
+    cmd: python part2_dvc/scripts/evaluate.py
+    deps:
+    - path: part2_dvc/models/fitted_model.pkl
+      hash: md5
+      md5: 2104be374727d88fd7a51b3e7bec3b27
+      size: 4212461
+    - path: part2_dvc/scripts/evaluate.py
+      hash: md5
+      md5: 0b8df2f1cd8236474262fc7fa1a90419
+      size: 951
+    params:
+      params.yaml:
+        n_jobs: -1
+        n_splits: 5
+        random_seed: 42
+        scoring:
+        - neg_root_mean_squared_error
+        - r2
+        - neg_mean_absolute_error
+        shuffle: true
+        target_col: target
+    outs:
+    - path: part2_dvc/cv_results/cv_res.json
+      hash: md5
+      md5: e099ae807afecc90c1bd5d5284299f82
+      size: 154
+      cloud:
+        my_storage_proj1:
+          etag: e099ae807afecc90c1bd5d5284299f82
+          version_id: 0006312B17813D08

@@ -19,7 +19,7 @@ def create_connection():
     return conn
 
 def get_data():
-    with open('part2_dvc/params.yaml', 'r') as fd:
+    with open('params.yaml', 'r') as fd:
         params = yaml.safe_load(fd)
 
     conn = create_connection()

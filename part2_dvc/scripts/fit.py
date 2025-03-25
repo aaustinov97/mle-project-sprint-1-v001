@@ -9,7 +9,7 @@ from catboost import CatBoostRegressor
 
 
 def fit_model():
-    with open('part2_dvc/params.yaml', 'r') as fd:
+    with open('params.yaml', 'r') as fd:
         params = yaml.safe_load(fd)
 
     data = pd.read_csv('part2_dvc/data/initial_data.csv')
@@ -26,7 +26,7 @@ def fit_model():
 
     preprocessor = ColumnTransformer(
         [
-            ('one_hot_enc', OneHotEncoder(drop=params['one_hot_drop']), one_hot_encoder_features.tolist()),
+            ('one_hot_enc', OneHotEncoder(drop=params['one_hot_drop']), one_hot_encoder_features.columns.tolist()),
             ('minmax', MinMaxScaler(), min_max_columns.columns.tolist()),
             ('num', StandardScaler(), num_features.columns.tolist())
         ],

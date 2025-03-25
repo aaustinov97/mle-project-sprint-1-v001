@@ -6,7 +6,7 @@ import os
 import json
 
 def evaluate_model():
-    with open('part2_dvc/params.yaml', 'r') as fd:
+    with open('params.yaml', 'r') as fd:
         params = yaml.safe_load(fd)
     
     pipeline = joblib.load('part2_dvc/models/fitted_model.pkl')
