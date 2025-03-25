@@ -5,8 +5,8 @@ stages:
     deps:
     - path: part2_dvc/scripts/data.py
       hash: md5
-      md5: 7b8e635912bfb4ba9a8c3e405ad4618b
-      size: 1011
+      md5: 580f10c20c290aeffdd8158cb555cee8
+      size: 1068
     params:
       params.yaml:
         index_col: flat_id
@@ -28,8 +28,8 @@ stages:
       size: 10740705
     - path: part2_dvc/scripts/fit.py
       hash: md5
-      md5: 797489f336d2e0cbc548a6eb63cd4376
-      size: 1982
+      md5: 04364612aa68b976cf3e66a5ab75c79d
+      size: 2149
     params:
       params.yaml:
         depth: 8
@@ -44,23 +44,23 @@ stages:
     outs:
     - path: part2_dvc/models/fitted_model.pkl
       hash: md5
-      md5: 2104be374727d88fd7a51b3e7bec3b27
+      md5: 08a9c682556e28d8f9af1ea826e4bbd2
       size: 4212461
       cloud:
         my_storage_proj1:
-          etag: 2104be374727d88fd7a51b3e7bec3b27
-          version_id: 0006312B177FB9E5
+          etag: 08a9c682556e28d8f9af1ea826e4bbd2
+          version_id: 0006312C29C6AC33
   evaluate_model:
     cmd: python part2_dvc/scripts/evaluate.py
     deps:
     - path: part2_dvc/models/fitted_model.pkl
       hash: md5
-      md5: 2104be374727d88fd7a51b3e7bec3b27
+      md5: 08a9c682556e28d8f9af1ea826e4bbd2
       size: 4212461
     - path: part2_dvc/scripts/evaluate.py
       hash: md5
-      md5: 0b8df2f1cd8236474262fc7fa1a90419
-      size: 951
+      md5: b30d3c1edff8be298083d78fe8cf03e3
+      size: 1096
     params:
       params.yaml:
         n_jobs: -1
@@ -75,9 +75,9 @@ stages:
     outs:
     - path: part2_dvc/cv_results/cv_res.json
       hash: md5
-      md5: e099ae807afecc90c1bd5d5284299f82
+      md5: e8f9cf913ccb3374c2d1e0d0f8722dc7
       size: 154
       cloud:
         my_storage_proj1:
-          etag: e099ae807afecc90c1bd5d5284299f82
-          version_id: 0006312B17813D08
+          etag: e8f9cf913ccb3374c2d1e0d0f8722dc7
+          version_id: 0006312C29C40C45
