@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mle_projects/mle-project-sprint-1-v001/mlruns/0/df93e04bca774ea2b46a5126a8fdcd5e/artifacts
+end_time: 1742914663240
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: df93e04bca774ea2b46a5126a8fdcd5e
+run_name: honorable-asp-810
+run_uuid: df93e04bca774ea2b46a5126a8fdcd5e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742914661773
+status: 3
+tags: []
+user_id: mle-user

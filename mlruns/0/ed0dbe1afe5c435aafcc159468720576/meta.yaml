@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mle_projects/mle-project-sprint-1-v001/mlruns/0/ed0dbe1afe5c435aafcc159468720576/artifacts
+end_time: 1742915133711
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ed0dbe1afe5c435aafcc159468720576
+run_name: orderly-ape-703
+run_uuid: ed0dbe1afe5c435aafcc159468720576
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742915053638
+status: 3
+tags: []
+user_id: mle-user

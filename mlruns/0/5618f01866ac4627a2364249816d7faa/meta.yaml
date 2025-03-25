@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mle_projects/mle-project-sprint-1-v001/mlruns/0/5618f01866ac4627a2364249816d7faa/artifacts
+end_time: 1742915595531
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5618f01866ac4627a2364249816d7faa
+run_name: casual-hound-372
+run_uuid: 5618f01866ac4627a2364249816d7faa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742915515974
+status: 3
+tags: []
+user_id: mle-user
