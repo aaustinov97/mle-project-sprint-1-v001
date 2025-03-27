@@ -1,0 +1,15 @@
+artifact_uri: //home//mle_projects//mle-project-sprint-1-v001//part2_dvc//mlruns/0/f42873c43a6a44dbaaac8271502eb916/artifacts
+end_time: 1743088237344
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f42873c43a6a44dbaaac8271502eb916
+run_name: likeable-bird-951
+run_uuid: f42873c43a6a44dbaaac8271502eb916
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743088085287
+status: 3
+tags: []
+user_id: mle-user

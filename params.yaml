@@ -10,6 +10,6 @@ index_col: 'flat_id'
 target_col: 'target'
 one_hot_drop: 'if_binary'
 n_splits: 5
-scoring: ['neg_root_mean_squared_error', 'r2', 'neg_mean_absolute_error']
+scoring: ['neg_root_mean_squared_error', 'r2', 'neg_mean_absolute_error', 'neg_mean_absolute_percentage_error']
 n_jobs: -1
 shuffle: True

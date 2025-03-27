@@ -1,0 +1,15 @@
+artifact_uri: //home//mle_projects//mle-project-sprint-1-v001//part2_dvc//mlruns/0/8f37152165e04257a2fcb70a94d54d6f/artifacts
+end_time: 1743089082887
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8f37152165e04257a2fcb70a94d54d6f
+run_name: wise-ox-342
+run_uuid: 8f37152165e04257a2fcb70a94d54d6f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743089053428
+status: 3
+tags: []
+user_id: mle-user

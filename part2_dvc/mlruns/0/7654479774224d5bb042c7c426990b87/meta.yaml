@@ -1,0 +1,15 @@
+artifact_uri: //home//mle_projects//mle-project-sprint-1-v001//part2_dvc//mlruns/0/7654479774224d5bb042c7c426990b87/artifacts
+end_time: 1743088048900
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7654479774224d5bb042c7c426990b87
+run_name: valuable-midge-984
+run_uuid: 7654479774224d5bb042c7c426990b87
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743088047085
+status: 3
+tags: []
+user_id: mle-user

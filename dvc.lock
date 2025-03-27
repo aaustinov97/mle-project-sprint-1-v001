@@ -5,31 +5,31 @@ stages:
     deps:
     - path: part2_dvc/scripts/data.py
       hash: md5
-      md5: 580f10c20c290aeffdd8158cb555cee8
-      size: 1068
+      md5: 9c6aa2bc1f0273fbf1500ed1a5cb0543
+      size: 1272
     params:
       params.yaml:
         index_col: flat_id
     outs:
     - path: part2_dvc/data/initial_data.csv
       hash: md5
-      md5: 3fe3e2396efcba8a722fcb6777985fb5
-      size: 10740705
+      md5: 036d89c17a2d9cc68658b6aed6917990
+      size: 10259160
       cloud:
         my_storage_proj1:
-          etag: 3fe3e2396efcba8a722fcb6777985fb5
-          version_id: 0006312B1784D4B9
+          etag: 036d89c17a2d9cc68658b6aed6917990
+          version_id: 0006315499AF4E10
   fit_model:
     cmd: python part2_dvc/scripts/fit.py
     deps:
     - path: part2_dvc/data/initial_data.csv
       hash: md5
-      md5: 3fe3e2396efcba8a722fcb6777985fb5
-      size: 10740705
+      md5: 036d89c17a2d9cc68658b6aed6917990
+      size: 10259160
     - path: part2_dvc/scripts/fit.py
       hash: md5
-      md5: 04364612aa68b976cf3e66a5ab75c79d
-      size: 2149
+      md5: 60f0c97e1132659130f5ba87ce258c42
+      size: 2342
     params:
       params.yaml:
         depth: 8
@@ -44,23 +44,23 @@ stages:
     outs:
     - path: part2_dvc/models/fitted_model.pkl
       hash: md5
-      md5: 08a9c682556e28d8f9af1ea826e4bbd2
-      size: 4212461
+      md5: 16185ff18ab9c5276183bb3b94f049e7
+      size: 4212239
       cloud:
         my_storage_proj1:
-          etag: 08a9c682556e28d8f9af1ea826e4bbd2
-          version_id: 0006312C29C6AC33
+          etag: 16185ff18ab9c5276183bb3b94f049e7
+          version_id: 0006315499B1283E
   evaluate_model:
     cmd: python part2_dvc/scripts/evaluate.py
     deps:
     - path: part2_dvc/models/fitted_model.pkl
       hash: md5
-      md5: 08a9c682556e28d8f9af1ea826e4bbd2
-      size: 4212461
+      md5: 16185ff18ab9c5276183bb3b94f049e7
+      size: 4212239
     - path: part2_dvc/scripts/evaluate.py
       hash: md5
-      md5: b30d3c1edff8be298083d78fe8cf03e3
-      size: 1096
+      md5: bb4239904ddc48ce166aa9c3f0e5102b
+      size: 1272
     params:
       params.yaml:
         n_jobs: -1
@@ -70,14 +70,15 @@ stages:
         - neg_root_mean_squared_error
         - r2
         - neg_mean_absolute_error
+        - neg_mean_absolute_percentage_error
         shuffle: true
         target_col: target
     outs:
     - path: part2_dvc/cv_results/cv_res.json
       hash: md5
-      md5: e8f9cf913ccb3374c2d1e0d0f8722dc7
-      size: 154
+      md5: 6b5c5d56094c431a42dbcec26340f7f3
+      size: 206
       cloud:
         my_storage_proj1:
-          etag: e8f9cf913ccb3374c2d1e0d0f8722dc7
-          version_id: 0006312C29C40C45
+          etag: 6b5c5d56094c431a42dbcec26340f7f3
+          version_id: 0006315499B005E4

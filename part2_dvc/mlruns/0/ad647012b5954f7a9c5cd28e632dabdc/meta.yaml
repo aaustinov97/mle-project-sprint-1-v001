@@ -1,0 +1,15 @@
+artifact_uri: //home//mle_projects//mle-project-sprint-1-v001//part2_dvc//mlruns/0/ad647012b5954f7a9c5cd28e632dabdc/artifacts
+end_time: 1743089193751
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ad647012b5954f7a9c5cd28e632dabdc
+run_name: delightful-goose-101
+run_uuid: ad647012b5954f7a9c5cd28e632dabdc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743089085990
+status: 3
+tags: []
+user_id: mle-user

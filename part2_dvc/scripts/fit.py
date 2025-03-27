@@ -14,8 +14,10 @@ def fit_model():
     with open('params.yaml', 'r') as fd:
         params = yaml.safe_load(fd)
 
-    mlflow.start_run()
 
+    mlflow.set_tracking_uri("/home/mle_projects/mle-project-sprint-1-v001/part2_dvc/mlruns")
+    mlflow.start_run()
+    
     data = pd.read_csv('part2_dvc/data/initial_data.csv')
 
     cat_features = data.select_dtypes(include='object')
@@ -32,7 +34,7 @@ def fit_model():
         [
             ('one_hot_enc', OneHotEncoder(drop=params['one_hot_drop']), one_hot_encoder_features.columns.tolist()),
             ('minmax', MinMaxScaler(), min_max_columns.columns.tolist()),
-            ('num', StandardScaler(), num_features.columns.tolist())
+            ('num', 'passthrough', num_features.columns.tolist()) # StandardScaler() не целесообразен при градиентном бустинге
         ],
         remainder='drop',
         verbose_feature_names_out=False

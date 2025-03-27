@@ -1,0 +1,15 @@
+artifact_uri: //home//mle_projects//mle-project-sprint-1-v001//part2_dvc//mlruns/0/f5facfcf6af04801ac2c84a1b4f4a63a/artifacts
+end_time: 1743088274508
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f5facfcf6af04801ac2c84a1b4f4a63a
+run_name: capricious-grub-686
+run_uuid: f5facfcf6af04801ac2c84a1b4f4a63a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743088266859
+status: 3
+tags: []
+user_id: mle-user
