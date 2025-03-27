@@ -1,0 +1,15 @@
+artifact_uri: //home//mle_projects//mle-project-sprint-1-v001//part2_dvc//mlruns/0/c0b6589d612b4d1794989b144ec2b42a/artifacts
+end_time: 1743090349697
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c0b6589d612b4d1794989b144ec2b42a
+run_name: angry-moose-373
+run_uuid: c0b6589d612b4d1794989b144ec2b42a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743090242185
+status: 3
+tags: []
+user_id: mle-user
