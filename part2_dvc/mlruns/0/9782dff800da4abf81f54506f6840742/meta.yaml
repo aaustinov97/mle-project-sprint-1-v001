@@ -1,0 +1,15 @@
+artifact_uri: //home//mle_projects//mle-project-sprint-1-v001//part2_dvc//mlruns/0/9782dff800da4abf81f54506f6840742/artifacts
+end_time: 1743089048802
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9782dff800da4abf81f54506f6840742
+run_name: flawless-pig-740
+run_uuid: 9782dff800da4abf81f54506f6840742
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743089046619
+status: 3
+tags: []
+user_id: mle-user
