@@ -22,8 +22,7 @@ def evaluate_model():
 
     cv_res = cross_validate(
         pipeline,
-        #data.drop(columns=[params['target_col']]),
-        data.drop(columns=['target']),
+        data.drop(columns=[params['target_col']]),
         data[params['target_col']],
         cv=cv_strategy,
         n_jobs=params['n_jobs'],

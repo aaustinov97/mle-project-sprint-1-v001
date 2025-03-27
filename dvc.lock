@@ -59,8 +59,8 @@ stages:
       size: 4212239
     - path: part2_dvc/scripts/evaluate.py
       hash: md5
-      md5: bb4239904ddc48ce166aa9c3f0e5102b
-      size: 1272
+      md5: 4082b07e73ea999d0973e80436eb4e8e
+      size: 1232
     params:
       params.yaml:
         n_jobs: -1
@@ -76,9 +76,9 @@ stages:
     outs:
     - path: part2_dvc/cv_results/cv_res.json
       hash: md5
-      md5: 6b5c5d56094c431a42dbcec26340f7f3
+      md5: c9d268d459f610d1c075052968b07071
       size: 206
       cloud:
         my_storage_proj1:
-          etag: 6b5c5d56094c431a42dbcec26340f7f3
-          version_id: 0006315499B005E4
+          etag: c9d268d459f610d1c075052968b07071
+          version_id: 00063154DD48E4F7
